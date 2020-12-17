@@ -1,5 +1,62 @@
 ﻿@page "/"
 
-<System_Widget />
+@RenderWidgets()
 
-<h1>This is a test</h1>
+<div id="widget-settings" @onclick="ShowSystemSettings" style="cursor: pointer;">
+	<span class="oi oi-cog" title="Widget Settings" aria-hidden="true"></span>
+</div>
+
+<div id="widget-settings-container">
+@RenderWidgetSettings()
+</div>
+
+@code {
+
+	IEnumerable<Type> Widgets = new Type[] { typeof(System_Widget) };
+
+	protected override void OnInitialized()
+	{
+		base.OnInitialized();
+	}
+
+	void ShowSystemSettings()
+	{
+
+		Console.WriteLine("Showing System Settings");
+
+	}
+
+	RenderFragment RenderWidgets()
+	{
+		var counter = 1;
+
+		return b =>
+		{
+			foreach (var w in Widgets)
+			{
+
+				b.OpenComponent(counter++, w);
+				b.CloseComponent();
+			}
+		};
+	}
+
+	RenderFragment RenderWidgetSettings()
+	{
+		var counter = 1;
+
+		return b =>
+		{
+			foreach (var w in Widgets)
+			{
+
+				var settingsTypeName = w.FullName.Replace("_Widget", "_Settings");
+				var settingsType = w.Assembly.GetType(settingsTypeName);
+
+				b.OpenComponent(counter++, settingsType);
+				b.CloseComponent();
+			}
+		};
+	}
+
+} 

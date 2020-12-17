@@ -1,18 +1,15 @@
 ﻿@implements IWidgetComponent
 
 <style>
-#bg {
+main::before {
+	content: "";
 	background-image: url('/backgrounds/@Manager.BackgroundImage');
-	background-repeat: no-repeat;
-	background-color: darkblue;
-	opacity: 0.6;
-	width: 100vw;
-	height: 100vh;
-	z-index: -10;
+	background-size: cover;
+	opacity: @Manager.BackgroundOpacity;
 	position: absolute;
 	top: 0;
+	right: 0;
+	bottom: 0;
 	left: 0;
 }
 </style>
-
-<div id="bg"></div>

@@ -12,7 +12,8 @@ namespace Fritz.HomeAutomation.Web.Data
 		private static readonly Dictionary<string, IDictionary<string, object>> _DataStore = new Dictionary<string, IDictionary<string, object>>() {
 
 			{"System Settings", new Dictionary<string,object> {
-				{"BackgroundImage", "snowyHome.gif" }
+				{"BackgroundImage", "snowyHome.gif" },
+				{"BackgroundOpacity", 0.6m }
 			} }
 
 		};

@@ -35,5 +35,28 @@ main {
 	width: 100vw;
 	height: 100vh;
 	padding: 10px;
-	display: block;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: start;
+	align-items: auto;
+	align-content: start;
 }
+
+main > * {
+	z-index: 10;
+}
+
+#widget-settings {
+	display: block;
+	margin: 10px;
+	flex: 999 999 auto;
+	font-size: x-large;
+	color: gray;
+	text-shadow: 2px 2px 2px #333;
+}
+
+.widget {
+	flex: 0 0 auto;
+	margin: 10px;
+}
+

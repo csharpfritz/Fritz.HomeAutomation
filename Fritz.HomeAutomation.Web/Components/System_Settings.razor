@@ -1,3 +1,47 @@
 ﻿@implements ISettingsComponent
 
-<h3>System.Settings</h3>
+@if (DisplayWindow)
+{
+	<div class="settings-window">
+		<dl>
+			<dt>Background image:</dt>
+			<dd>
+
+			</dd>
+			<dt>Background opacity:</dt>
+			<dd></dd>
+		</dl>
+
+		<span class="btn-group">
+			<button class="btn btn-secondary" @onclick="CloseWindow">Close</button>
+			<button class="btn btn-primary" @onclick="Save">Save</button>
+		</span>
+
+	</div>
+}
+else
+{
+	<div class="settings-icon" @onclick="DisplaySettingsWindow" style="background-color: lightgray; text-align: center;">
+		<span class="oi oi-cog" title="Widget Settings" aria-hidden="true"></span>
+		<br/>
+		<b>System Settings</b>
+	</div>
+}
+
+@code {
+
+	private bool DisplayWindow = false;
+
+	private void DisplaySettingsWindow() {
+		DisplayWindow = true;
+	}
+
+	private void CloseWindow() {
+		DisplayWindow = false;
+	}
+
+	private void Save() {
+		// do something snappy here!
+	}
+
+} 

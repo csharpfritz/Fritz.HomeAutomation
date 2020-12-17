@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Fritz.HomeAutomation.Web.Components
 {
-	public partial class System_Settings : ISettingsComponent
+	public partial class System_Settings 
 	{
 
 		public ISettingsManager Settings { get; set; }
