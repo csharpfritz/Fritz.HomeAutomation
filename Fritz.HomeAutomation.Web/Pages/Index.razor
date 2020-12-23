@@ -6,11 +6,18 @@
 	<span class="oi oi-cog" title="Widget Settings" aria-hidden="true"></span>
 </div>
 
+@if (SettingsVisible) {
+<div class="modal"></div>
+
 <div id="widget-settings-container">
 @RenderWidgetSettings()
 </div>
 
+}
+
 @code {
+
+	bool SettingsVisible = false;
 
 	IEnumerable<Type> Widgets = new Type[] { typeof(System_Widget) };
 
@@ -22,7 +29,7 @@
 	void ShowSystemSettings()
 	{
 
-		Console.WriteLine("Showing System Settings");
+		SettingsVisible = true;
 
 	}
 

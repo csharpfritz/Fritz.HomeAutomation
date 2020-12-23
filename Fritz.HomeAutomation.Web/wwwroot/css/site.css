@@ -60,3 +60,38 @@ main > * {
 	margin: 10px;
 }
 
+.modal {
+	display: block;
+	position: fixed;
+	z-index: 12;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: black;
+	opacity: 0.8;
+}
+
+#widget-settings-container {
+	display: block;
+	position: fixed;
+	z-index: 15;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	margin: 10px;
+	font-size: x-large;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: start;
+	align-items: auto;
+	align-content: start;
+}
+
+.settings-icon {
+	padding: 10px;
+	max-width: 200px;
+	height: 5em;
+}
